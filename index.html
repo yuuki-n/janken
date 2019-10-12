@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/sample1.css">
+    <title>おっちょこちょい魔女見習いの卒業試験</title>
+</head>
+
+<body>
+    <header id="top" class="top">
+        <h1 class="title">おっちょこちょい魔女見習いの卒業試験</h1>
+        <p>鍋に入っている材料に魔法をかけて、魔法薬を作ろう！</p>
+    </header>
+
+    <main class="majo_minarai">
+        <!-- 魔女見習いの画像 -->
+        <img src="majo_minarai.jpg" width=15% height=15%>
+        <!-- 魔法をかけるボタンを作る -->
+        <ul>
+            <button id="button" class="mahou_btn">
+                <p class="mahou_btn"></p>→魔法をかける←
+            </button>
+        </ul>
+        <img src="nabe.jpg" alt="nabe" width=20% height=20%></div>
+        <div id="judgement" class="judgement">出来たのは？</div>
+    </main>
+
+
+    <main2 class="majo">
+        <!-- 魔女の画像と会話文 -->
+        <!-- 枠の中に会話文(完成品の評価)を入れる。文字数によって枠のサイズが変化する -->
+        <div id="majo_text" class="majo_text" style="display:inline-block; background:#FFDBC9; padding:15px; border:3px;
+            border-radius:10px; word-break:break-all;">
+            <p id="taiki">どれどれ...</p>
+            <p id="kekka"></p>
+        </div>
+        <!-- 魔女の画像を右に並べる -->
+        <img src="majo.jpg" alt="majo" align="right" width=15% height=15%>
+    </main2>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            const result = ['魔法がかかった', '魔力不足だった', '魔力を込めすぎた', '隣の鍋に魔法がかかった'];
+
+            $('#button').on('click', function () {
+                // 
+                let rand = Math.floor(Math.random() * 5);
+                // 0魔法がかかった、1材料が沸騰してしまった、2魔力不足だった、3魔力を込めすぎた、4隣の鍋に魔法がかかった
+                // 
+                console.log(rand);
+                if (rand == 0) {
+                    $('#judgement').text('魔法がかかった');
+                    $('#kekka').html('<p id="kekka">出来たのは魔法薬じゃ</p>');
+                    $("#taiki").css("display", "block");
+                } else if (rand == 1) {
+                    $('#judgement').text('材料が沸騰してしまった');
+                    $('#kekka').html('<p id="kekka">出来たのはフルーツゼリーじゃ</p>');
+                    $("#taiki").css("display", "block");
+                } else if (rand == 2) {
+                    $('#judgement').text('魔力不足だった');
+                    $('#kekka').html('<p id="kekka">出来たのはスポーツドリンクじゃ</p>');
+                    $("#taiki").css("display", "block");
+                } else if (rand == 3) {
+                    $('#judgement').text('魔力を込めすぎた');
+                    $('#kekka').html('<p id="kekka">出来たのはプロテインじゃ</p>');
+                    $("#taiki").css("display", "block");
+                } else if (rand == 4) {
+                    $('#judgement').text('隣の鍋に魔法がかかった');
+                    $('#kekka').html('<p id="kekka">ばかもーん</p>');
+                    $("#taiki").css("display", "none");
+                }
+            });
+        }); 
+    </script>
+
+</body>
+
+</html>

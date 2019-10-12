@@ -1,0 +1,49 @@
+.title{
+    font-size: 50px;
+}
+.majo_minarai{
+    display: flex;
+    margin-top: 120px;
+}
+.mahou_btn{
+    font-size: 25px;
+    color: #800080;
+    margin-top:  60px;
+    margin-right: 60px;
+    border-radius: 10px;
+    background-color: #D0B0FF;
+    box-shadow: 3px 3px;
+}
+.judgement{
+    color: #800080;
+    font-size: 25px;
+}
+.majo{
+    display: flex;
+    flex-direction:row-reverse;
+    margin-right: 60px;
+}
+.majo_text{
+    /* margin-right: 60px;
+    color:#FF6600; */
+
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 0 1.5em 15px;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #555;
+    font-size: 16px;
+    background: #e0edff;
+}
+.majo_text:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #FFDBC9;
+}
+
